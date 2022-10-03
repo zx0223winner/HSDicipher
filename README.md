@@ -55,7 +55,7 @@ There is a possible steep learning curve for users with limited knowledge of bio
 But due to the limitation of this strategy, it should be noted that there are some large groups of HSD candidates in the database that likely diverged in function from one another. In the database, those putatively diverged HSD groups were labelled as “candidate HSDs” and a warning note was added to suggest users should proceed with caution when working with these types of datasets.
 
 ### 4. Reference
-1. X. Zhang, Yining. Hu, (2022). HSDicipher: pipeline for comparative genomics analysis of highly similar duplicates data in eukaryotic genomes. doi:upcoming
+1. X. Zhang, Yining. Hu, (2022). HSDecipher: pipeline for comparative genomics analysis of highly similar duplicates data in eukaryotic genomes. doi:upcoming
 2. X Zhang, Yining. Hu, David Roy Smith (2022). HSDatabase – a database of highly similar duplicate genes from plants, animals, and algae. bioRxiv 2022.08.01.502183; doi: https://doi.org/10.1101/2022.08.01.502183
 3. Xi Zhang, Yining Hu, David Roy Smith. (2021). HSDFinder: a BLAST-based strategy to search for highly similar duplicated genes in eukaryotic genomes. Frontiers in Bioinformatics. doi: 10.3389/fbinf.2021.803176
 4. Xi Zhang, Yining Hu, David Roy Smith. (2021). Protocol for HSDFinder: Identifying, annotating, categorizing, and visualizing duplicated genes in eukaryotic genomes DOI: https://doi.org/10.1016/j.xpro.2021.100619
