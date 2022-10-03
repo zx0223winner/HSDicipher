@@ -23,14 +23,14 @@ python3 HSD_categories.py <path to HSD species folder> <format of HSD file. e.g.
 #HSD_add_on.py
 python3 HSD_add_on.py  -i <inputfile> -a <adding_file> -o <output file>
 ```
->HSD_add_on.py can add the later HSD data on the former HSD, in this way, the HSD canadiate categories can be enlarged. For example, HSDs identified at a threshold of 90%_30aa were added on to those identified at a threshold of 90%_10aa (denoted as “ 90%_30aa+90%_10aa”); any redundant HSDs candidates picked out at this combo threshold were removed if the more relaxed threshold (i.e., 90%_30aa) had the identical genes or contained the same gene copies from the stricter cut-off (i.e., 90%_10aa).
+>HSD_add_on.py can add the later HSD data on the former HSD, in this way, the HSD canadiate categories can be enlarged. For example, HSDs identified at a threshold of 90%_30aa were added on to those identified at a threshold of 90%_10aa (denoted as “ 90%_30aa+90%_10aa”); any redundant HSDs candidates picked out at this combination threshold were removed if the more relaxed threshold (i.e., 90%_30aa) had the identical genes or contained the same gene copies from the stricter cut-off (i.e., 90%_10aa).
 
 
 ```
 #HSD_batch_run.py
 python3 batch_run.py -i <inputfolder>
 ```
-> HSD_batch_run.py can do a series of combination thresholds at once. To minimize the redundancy and to acquire a larger dataset of HSD candidates, we processed each selected species with the following combination of thresholds: E + (D + (C + (B +A))). Any HSDs candidates pinpointed at the combo threshold (90%_30aa+90%_10aa) were removed if the minimum gene copy length was less than half of the maximum gene copy length for each HSD, or if HSD candidates had gene copies with incomplete conserved domains (i.e., different number of Pfam domains). After filtering the combo threshold at (90%_30aa+90%_10aa), we added on a more relaxed threshold 90%_50aa (i.e., 90%_50aa+(90%_30aa+90%_10aa)) and then carried out the same HSD candidate removal/filtering process.
+> HSD_batch_run.py can do a series of combination thresholds at once. To minimize the redundancy and to acquire a larger dataset of HSD candidates, we processed each selected species with the following combination of thresholds: E + (D + (C + (B +A))). Any HSDs candidates pinpointed at the combination threshold (90%_30aa+90%_10aa) were removed if the minimum gene copy length was less than half of the maximum gene copy length for each HSD, or if HSD candidates had gene copies with incomplete conserved domains (i.e., different number of Pfam domains). After filtering the combination threshold at (90%_30aa+90%_10aa), we added on a more relaxed threshold 90%_50aa (i.e., 90%_50aa+(90%_30aa+90%_10aa)) and then carried out the same HSD candidate removal/filtering process.
 
 >A = 90%_100aa+(90%_70aa+(90%_50aa+(90%_30aa+90%_10aa)))
 
