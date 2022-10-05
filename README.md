@@ -1,6 +1,6 @@
 
 ### 1. HSDecipher
-Custom Python scripts packages for the downstream comparative genomics analysis of highly similar duplicates data
+The pipeline has the custom Python scripts packages for the downstream comparative genomics analysis of highly similar duplicate genes
 
 ### 2. What's HSDecipher?
 The software implementation was written in Python 3 using the following custom scripts and platforms: HSD_statistics.py, HSD_categories.py, HSD_add_on.py, HSD_batch_run.py and HSD_heatmap.py
