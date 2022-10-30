@@ -5,30 +5,30 @@ The pipeline has the custom Python scripts packages for the downstream comparati
 ### 2. What's HSDecipher?
 The software implementation was written in Python 3 using the following custom scripts and platforms: HSD_statistics.py, HSD_categories.py, HSD_add_on.py, HSD_batch_run.py and HSD_heatmap.py
 
-```
+```python3
 # HSD_statistics.py
-python3 HSD_Statistics.py <path to HSD species folder> <format of HSD file. e.g., 'txt' or 'tsv'> <output file name. e,g. species_stat.tsv>
+>python3 HSD_Statistics.py <path to HSD species folder> <format of HSD file. e.g., 'txt' or 'tsv'> <output file name. e,g. species_stat.tsv>
 ```
 >HSD_statistics.py is a custom python script that calculating the statistics of HSDs via using a variety of HSDFinder thresholds. The output file will be written in a table with the header: File name; Candidate_HSDs#; Non-redundant_gene_copies#; Gene_copies#; True_HSDs# ;Space# ;Incomplete_HSDs#; Capturing_value; Performance_score;
 
-```
+```python3
 #HSD_categories.py
-python3 HSD_categories.py <path to HSD species folder> <format of HSD file. e.g., 'txt' or 'tsv'> <output file name. e,g. species_groups.tsv>
+>python3 HSD_categories.py <path to HSD species folder> <format of HSD file. e.g., 'txt' or 'tsv'> <output file name. e,g. species_groups.tsv>
 
 ```
 >HSD_categories.py a custom python script that counts the number of HSD with two, three, and more than four categories, which is helpful to evaluate the distribution of groups in HSDs. 
 
 
-```
+```python3
 #HSD_add_on.py
-python3 HSD_add_on.py  -i <inputfile> -a <adding_file> -o <output file>
+>python3 HSD_add_on.py  -i <inputfile> -a <adding_file> -o <output file>
 ```
 >HSD_add_on.py can add the later HSD data on the former HSD, in this way, the HSD canadiate categories can be enlarged. For example, HSDs identified at a threshold of 90%_30aa were added on to those identified at a threshold of 90%_10aa (denoted as “ 90%_30aa+90%_10aa”); any redundant HSDs candidates picked out at this combination threshold were removed if the more relaxed threshold (i.e., 90%_30aa) had the identical genes or contained the same gene copies from the stricter cut-off (i.e., 90%_10aa).
 
 
-```
+```python3
 #HSD_batch_run.py
-python3 batch_run.py -i <inputfolder>
+>python3 batch_run.py -i <inputfolder>
 ```
 > HSD_batch_run.py can do a series of combination thresholds at once. To minimize the redundancy and to acquire a larger dataset of HSD candidates, we processed each selected species with the following combination of thresholds: E + (D + (C + (B +A))). Any HSDs candidates pinpointed at the combination threshold (90%_30aa+90%_10aa) were removed if the minimum gene copy length was less than half of the maximum gene copy length for each HSD, or if HSD candidates had gene copies with incomplete conserved domains (i.e., different number of Pfam domains). After filtering the combination threshold at (90%_30aa+90%_10aa), we added on a more relaxed threshold 90%_50aa (i.e., 90%_50aa+(90%_30aa+90%_10aa)) and then carried out the same HSD candidate removal/filtering process.
 
@@ -42,9 +42,9 @@ python3 batch_run.py -i <inputfolder>
 
 >E = 50%_100aa+(50%_70aa+(50%_50aa+(50%_30aa+50%_10aa)))
 
-```
+```python3
 #HSD_heatmap.py
-python3 HSD_heatmap.py -f <HSD file folder> -k <KO file folder> -r <width of output heatmap> -c <length of output heatmap>
+>python3 HSD_heatmap.py -f <HSD file folder> -k <KO file folder> -r <width of output heatmap> -c <length of output heatmap>
 ```
 HSD_heatmap.py is able to visualize the collected HSDs in a heatmap and compare the HSDs sharing the same pathway function. This can be done inta-specise and inter-speies heatmaps. Pleas find the example reuslts in the Heatmap Folder.
 
