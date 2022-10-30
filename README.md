@@ -44,7 +44,7 @@ The software implementation was written in Python 3 using the following custom s
 
 ```python3
 #HSD_heatmap.py
->python3 HSD_heatmap.py -f <HSD file folder> -k <KO file folder> -r <width of output heatmap> -c <height of output heatmap>
+>python3 HSD_heatmap.py -f <HSD file folder> -k <KO file folder> -r <width of output heatmap,e.g., 30 pixels> -c <height of output heatmap,e.g., 20 pixels>
 ```
 HSD_heatmap.py is able to visualize the collected HSDs in a heatmap and compare the HSDs sharing the same pathway function. This can be done inta-specise and inter-speies heatmaps. Pleas find the example reuslts in the Heatmap Folder.
 
