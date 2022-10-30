@@ -48,13 +48,31 @@ The software implementation was written in Python 3 using the following custom s
 ```
 HSD_heatmap.py is able to visualize the collected HSDs in a heatmap and compare the HSDs sharing the same pathway function. This can be done inta-specise and inter-speies heatmaps. Pleas find the example reuslts in the Heatmap Folder.
 
+### 3. Example of HSDs folder file
+--------------------------
+HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
 
-### 3.Limitation
+*Example of the 8-column spreadsheet:*
+```
+g735.t1 	g735.t1; g741.t1; g8053.t1 	744; 744; 747 	Pfam PF11999; PF11999; PF11999 	Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494) 	IPR021884; IPR021884; IPR021884 	Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like 
+```
+Column header explanation:
+1. Highly Similar Duplicates (HSDs) identifiers: The first gene model of the duplicate gene copies is used as the HSD identifers in default. (e.g. g735.t1)
+2. Duplicate gene copies (within 10 amino acids, ≥90% pairwise identities)(e.g. g735.t1; g741.t1; g8053.t1)
+3. Amino acid length of duplicate gene copies (aa)(e.g. 744; 744; 747)
+4. Pfam identifier (e.g. PF11999; PF11999; PF11999)
+5. Analysis (e.g. Pfam / PRINTS / Gene3D)
+6. Pfam Description (e.g. Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494))
+7. InterPro Entry Identifier (e.g. IPR021884; IPR021884; IPR021884)
+8. InterPro Entry Description (e.g. Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like)
+<a name="sec5"></a>
+
+### 4.Limitation
 There is a steep learning curve for researchers with limited knowledge of bioinformatics, especially those who are not familiar with the basic command lines and dash shell in a Linux/Unix environment. At the present time, a “one-click solution” does not exist because of the desire to retain flexibility in the usage of our scripts for different purposes. That said, our tool is comparatively easier to use at current stage. At present there are very few tools that can execute the downstream comparative genomics analysis of highly similar duplicate gene data. HSDecipher thus fills a need for the bioinformatics and genomics community.
 
 Since there is no golden rule to distinguish partial duplicates from more complete ones, a combination of thresholds was used to acquire a larger dataset of HSD candidates. But due to the limitation of this strategy, it should be noted that there are some large groups of HSD candidates in the database that likely diverged in function from one another. Users should thus proceed with caution when working with these types of datasets.
 
-### 4. Reference
+### 5. Reference
 1. Xi Zhang, Yining Hu, Zhengyu Cheng, John M. Archibald (2022). HSDecipher: A pipeline for comparative genomic analysis of highly similar duplicate genes in eukaryotic genomes. StarProtocols. doi:upcoming
 2. Zhang, X., Hu, Y. & Smith, D. R. 2022. HSDatabase - a database of highly similar duplicate genes from plants, animals, and algae. Database, doi:http://doi.org/10.1093/database/baac086.
 3. Zhang, X. & Smith, D. R. 2022. An overview of online resources for intra-species detection of gene duplications. Frontiers in Genetics, doi: http://doi.org/10.3389/fgene.2022.1012788.
@@ -62,5 +80,3 @@ Since there is no golden rule to distinguish partial duplicates from more comple
 5. Xi Zhang, Yining Hu, David Roy Smith. (2021). Protocol for HSDFinder: Identifying, annotating, categorizing, and visualizing duplicated genes in eukaryotic genomes DOI: https://doi.org/10.1016/j.xpro.2021.100619
 6. Xi Zhang, et.al. David Roy Smith (2021). Draft genome sequence of the Antarctic green alga Chlamydomonas sp. UWO241 DOI:https://doi.org/10.1016/j.isci.2021.102084
 
-### 5. Contact
-Usage of this site follows AWS’s Privacy Policy. © Copyright (C) 2021
