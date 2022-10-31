@@ -1,6 +1,7 @@
 import os
 import sys
 
+# HSD_categories.py counts the number of HSDs with two, three, and more than four categories, which is helpful when evaluating the distribution of duplicate groups within HSDs
 if len(sys.argv)!=4: #if the input arguments not 4, showing the usage.
     print("Usage:python3 HSD_categories.py <path to HSD species folder> <format of HSD file. e.g., 'txt' or 'tsv'> <output file name. e,g. species_groups.tsv>")
     sys.exit()
