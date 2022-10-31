@@ -50,21 +50,23 @@ HSD_heatmap.py is able to visualize the collected HSDs in a heatmap and compare 
 
 ### 3. Example of HSDs folder file
 --------------------------
-HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
+HSDFinder generates one output files: 9-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
 
-*Example of the 8-column spreadsheet:*
+*Example of the 9-column tab-delimited file:* e.g.,Chlamydomonas_reinhardtii.90_10.txt
 ```
-g735.t1 	g735.t1; g741.t1; g8053.t1 	744; 744; 747 	Pfam PF11999; PF11999; PF11999 	Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494) 	IPR021884; IPR021884; IPR021884 	Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like 
+NP_027422.1	NP_027422.1; NP_849661.1; NP_567636.1	303; 293; 291	Pfam	PF06454; PF06454; PF06454	Protein of unknown function (DUF1084); Protein of unknown function (DUF1084); Protein of unknown function (DUF1084)	5.5E-146; 1.1E-145; 2.1E-143	IPR009457; IPR009457; IPR009457	THH1/TOM1/TOM3 domain; THH1/TOM1/TOM3 domain; THH1/TOM1/TOM3 domain
+NP_027543.2	NP_027543.2; NP_001322262.1; NP_001154475.1	606; 603; 684	Pfam	PF03141; PF03141; PF03141	Putative S-adenosyl-L-methionine-dependent methyltransferase; Putative S-adenosyl-L-methionine-dependent methyltransferase; Putative S-adenosyl-L-methionine-dependent methyltransferase	6.2E-75; 5.1E-132; 9.8E-139	IPR004159; IPR004159; IPR004159	Putative S-adenosyl-L-methionine-dependent methyltransferase; Putative S-adenosyl-L-methionine-dependent methyltransferase; Putative S-adenosyl-L-methionine-dependent methyltransferase
 ```
 Column header explanation:
-1. Highly Similar Duplicates (HSDs) identifiers: The first gene model of the duplicate gene copies is used as the HSD identifers in default. (e.g. g735.t1)
-2. Duplicate gene copies (within 10 amino acids, ≥90% pairwise identities)(e.g. g735.t1; g741.t1; g8053.t1)
-3. Amino acid length of duplicate gene copies (aa)(e.g. 744; 744; 747)
-4. Pfam identifier (e.g. PF11999; PF11999; PF11999)
-5. Analysis (e.g. Pfam / PRINTS / Gene3D)
-6. Pfam Description (e.g. Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494))
-7. InterPro Entry Identifier (e.g. IPR021884; IPR021884; IPR021884)
-8. InterPro Entry Description (e.g. Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like)
+1. Highly Similar Duplicates (HSDs) identifiers: The first gene model of the duplicate gene copies is used as the HSD identifers in default. (e.g. NP_027422.1)
+2. Duplicate gene copies (different genes are seperated by comma)(e.g. NP_027422.1; NP_849661.1; NP_567636.1)
+3. Amino acid length of duplicate gene copies (aa)(e.g. 303; 293; 291)
+4. The protein functional type (e.g., Pfam / PRINTS / Gene3D)
+5. Pfam identifier (e.g. PF06454; PF06454; PF06454)
+6. Pfam Description (e.g. Protein of unknown function (DUF1084); Protein of unknown function (DUF1084); Protein of unknown function (DUF1084))
+7. E-value (e.g., 5.5E-146; 1.1E-145; 2.1E-143)
+8. InterPro Entry Identifier (e.g. IPR009457; IPR009457; IPR009457)
+9. InterPro Entry Description (e.g. THH1/TOM1/TOM3 domain; THH1/TOM1/TOM3 domain; THH1/TOM1/TOM3 domain)
 <a name="sec5"></a>
 
 ### 4.Limitation
