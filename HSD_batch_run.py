@@ -1,8 +1,29 @@
+# HSDecipher v1.0
+
+# Copyright 2022 Zhang X., Hu Y., Zhengyu Cheng, Archibald J.M.
+
+
+#   This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 import sys
 import getopt
 import os
 
-# define the main function of batch_run.py. HSDs identified at a threshold of 90%_30aa were added on to those identified at a threshold of 90%_10aa (denoted as ‘90%_30aa+90%_10aa’); any redundant HSDs candidates picked out at this combo threshold were removed if the more relaxed threshold (i.e. 90%_30aa) had the identical genes or contained the same gene copies from the stricter cut-off (i.e. 90%_10aa). Moreover, any HSD candidates pinpointed at the combo threshold (90%_30aa + 90%_10aa) were removed if the minimum gene copy length was less than half of the maximum gene copy length for each HSD.
+# define the main function of batch_run.py. HSDs identified at a threshold of 90%_30aa were added on to those identified at a threshold of 90%_10aa (denoted as ‘90%_30aa+90%_10aa’); 
+# any redundant HSDs candidates picked out at this combo threshold were removed if the more relaxed threshold (i.e. 90%_30aa) had the identical genes or contained the same gene copies from the stricter cut-off (i.e. 90%_10aa). 
+# Moreover, any HSD candidates pinpointed at the combo threshold (90%_30aa + 90%_10aa) were removed if the minimum gene copy length was less than half of the maximum gene copy length for each HSD.
+
 def main(argv):
     input_folder = ''
     try:
