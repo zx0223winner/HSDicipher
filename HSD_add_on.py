@@ -21,6 +21,10 @@ import sys
 import getopt
 import re
 
+# Since the similarity of duplicate genes within and among genomes can vary significantly, 
+# by using the scripts HSD_add_on.py and HSD_batch_run.py, 
+# users can add newly curated HSDs using a combination of thresholds to assemble a larger dataset of HSD candidates. 
+
 # define the column headers of HSD folder data
 class Gene:
     def __init__(self, name, length, ftype, pf, domain1, evalue, ipr, domain2):
