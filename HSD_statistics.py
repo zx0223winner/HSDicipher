@@ -1,5 +1,28 @@
+# HSDecipher v1.0
+
+# Copyright 2022 Zhang X., Hu Y., Zhengyu Cheng, Archibald J.M.
+
+
+#   This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 import os
 import sys
+
+# HSD_statistics.py is a python script that calculates the statistics of HSDs using a variety of HSDFinder thresholds. 
+# The output file is written in a table with the following headers: 
+# File name, Candidate HSDs, Non-redundant gene copies, Gene copies, True HSDs, Space, Incomplete HSDs, Capturing value, and Performance score. 
+# ‘Capturing value’ and 'Performance score’ are two parameters used to evaluate the HSD results
 
 if len(sys.argv)!=4: #if the input arguments not 4, showing the usage.
     print("Usage:python3 HSD_Statistics.py <path to HSD species folder> <format of HSD file. e.g., 'txt' or 'tsv'> <output file name. e,g. species_stat.tsv>")
