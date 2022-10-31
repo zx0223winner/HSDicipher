@@ -2,7 +2,7 @@ import sys
 import getopt
 import os
 
-
+# define the main function of batch_run.py. HSDs identified at a threshold of 90%_30aa were added on to those identified at a threshold of 90%_10aa (denoted as ‘90%_30aa+90%_10aa’); any redundant HSDs candidates picked out at this combo threshold were removed if the more relaxed threshold (i.e. 90%_30aa) had the identical genes or contained the same gene copies from the stricter cut-off (i.e. 90%_10aa). Moreover, any HSD candidates pinpointed at the combo threshold (90%_30aa + 90%_10aa) were removed if the minimum gene copy length was less than half of the maximum gene copy length for each HSD.
 def main(argv):
     input_folder = ''
     try:
