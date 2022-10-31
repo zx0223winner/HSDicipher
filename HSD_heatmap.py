@@ -8,7 +8,10 @@ import matplotlib.colors as cls
 from os import listdir
 from os.path import isfile, join
 
+# HSD_heatmap.py visualizes the collected HSDs in a heatmap and compares HSDs sharing the same predicted biochemical pathway function. 
+# The KEGG database has been used to provide KO accession numbers for each gene model identifier
 
+#set the column header for he kegg file
 class Kegg:
     def __init__(self, ct1, ct, ko, des):
         self.category1 = ct1
@@ -16,7 +19,7 @@ class Kegg:
         self.ko_number = ko
         self.description = des
 
-
+# define the run() function with the required parameters figure height (row size), figure width (column size) and the HSD folder files
 def run(hsd_files_path, ko_files_path, row_size, col_size):
     hsd_file_list = [f for f in listdir(hsd_files_path) if isfile(join(hsd_files_path, f)) and not f.startswith('.')]
     ko_file_list = [f for f in listdir(ko_files_path) if isfile(join(ko_files_path, f)) and not f.startswith('.')]
@@ -147,7 +150,7 @@ def run(hsd_files_path, ko_files_path, row_size, col_size):
         save_file = hsd_files_path.split('/')[-1] + '_' + 'output_heatmap' + '.tsv'
         output.to_csv(save_file, sep='\t')
 
-
+# define the main function to run the HSD_heatmap.py --hsd_files_path=<HSD file folder> --ko_files_path=<KO file folder> --row_size=<width of output heatmap> --col_size=<height of output heatmap>
 def main(argv):
     hsd_files_path = ''
     ko_files_path = ''
@@ -162,8 +165,8 @@ def main(argv):
         if opt == '-h':
             print('HSD_heatmap.py -f <HSD file folder> -k <KO file folder> -r <width of output heatmap> '
                   '-c <length of output heatmap>')
-            print('HSD_heatmap.pyy --hsd_files_path=<HSD file folder> --ko_files_path=<KO file folder>'
-                  ' --row_size=<width of output heatmap> --col_size=<length of output heatmap>')
+            print('HSD_heatmap.py --hsd_files_path=<HSD file folder> --ko_files_path=<KO file folder>'
+                  ' --row_size=<width of output heatmap> --col_size=<height of output heatmap>')
             sys.exit(2)
         elif opt in ("-f", "--hsd_files_path"):
             hsd_files_path = arg
