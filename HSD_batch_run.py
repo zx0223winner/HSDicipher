@@ -47,6 +47,7 @@ def main(argv):
                 #     os.system("python3 add_HSD.py -i " + input_folder + '/' + f + '/' + f + '.90_10.txt' + ' -a ' +
                 #               input_folder + '/' + f + '/' + f + '.' + file + '.txt -o ' + input_folder + '/' + f + '/'
                 #               + f + '.90_10.txt')
+                os.system("cp -r" + input_folder + '/' + f + " " + input_folder + '/original/' + f)
                 for key in sorted(add_dic.keys()):
                     for file in add_dic[key]:
                         os.system("python3 HSD_add_on.py -i " + input_folder + '/' + f + '/' + f + '.' + key + '_10.txt' +
