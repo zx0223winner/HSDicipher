@@ -3,7 +3,7 @@ import sys
 import getopt
 import re
 
-
+# define the column headers of HSD folder data
 class Gene:
     def __init__(self, name, length, ftype, pf, domain1, evalue, ipr, domain2):
         self.name = name
@@ -15,7 +15,7 @@ class Gene:
         self.ipr = ipr
         self.domain2 = domain2
 
-
+# define the same_domain function to decide if gene copies contain same conserved domain.
 def same_domain(domain_list):
     domains = domain_list[0].split(', ')
     for item in domain_list:
@@ -24,7 +24,7 @@ def same_domain(domain_list):
             return False
     return True
 
-
+# define hsd_filter fucntion to filter those added HSDs. We added the HSD candidates one after another at different homology assessment metrics (i.e. HSDs identified at more relaxed thresholds were treated more strictly than those found using more conservative thresholds). 
 def hsd_filter(adding_file):
     gene_list = {}
     hsd_to_add = defaultdict(list)
@@ -54,7 +54,7 @@ def hsd_filter(adding_file):
                         hsd_to_add[items[0]].append(gene_names[i])
     return hsd_to_add, gene_list
 
-
+# HSDs identified at a threshold of 90%_30aa were added on to those identified at a threshold of 90%_10aa (denoted as ‘90%_30aa+90%_10aa’); any redundant HSDs candidates picked out at this combo threshold were removed if the more relaxed threshold (i.e. 90%_30aa) had the identical genes or contained the same gene copies from the stricter cut-off (i.e. 90%_10aa). Moreover, any HSD candidates pinpointed at the combo threshold (90%_30aa + 90%_10aa) were removed if the minimum gene copy length was less than half of the maximum gene copy length for each HSD.
 def add_hsd(input_file, gene_list, hsd_to_add, output_file):
     old_hsd_dic = defaultdict(list)
     gene_to_hsd = defaultdict(list)
@@ -97,7 +97,7 @@ def add_hsd(input_file, gene_list, hsd_to_add, output_file):
                 out.write(output_line)
     return output_file
 
-
+# write gene in one line 
 def write_gene_oneline(gene_names, gene_list):
     gene = ""
     length = ""
@@ -141,7 +141,7 @@ def str2int(v_str):
 def sort_humanly(v_list):
     return sorted(v_list, key=str2int)
 
-
+# the main function of the HSD_add_on.py script
 def main(argv):
     input_file = ''
     adding_file = ''
