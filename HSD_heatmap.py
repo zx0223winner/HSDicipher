@@ -185,7 +185,7 @@ def main(argv):
                   '-c <length of output heatmap>')
             print('HSD_heatmap.py --hsd_files_path=<HSD file folder> --ko_files_path=<KO file folder>'
                   ' --row_size=<width of output heatmap> --col_size=<height of output heatmap>')
-            sys.exit(2)
+            sys.exit(0)
         elif opt in ("-f", "--hsd_files_path"):
             hsd_files_path = arg
         elif opt in ("-k", "--ko_files_path"):
