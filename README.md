@@ -1,6 +1,16 @@
+[![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://anaconda.org/bioconda/hsdecipher)
 
 ### 1. HSDecipher
 The pipeline has the custom Python scripts packages for the downstream comparative genomics analysis of highly similar duplicate genes
+
+### Conda install
+To install this package run one of the following:
+> conda install bioconda::hsdecipher 
+
+Then testing the usage by running:
+
+> hsdecipher -h
+
 
 ### 2. What's HSDecipher?
 The software implementation was written in Python 3 using the following custom scripts and platforms: HSD_statistics.py, HSD_categories.py, HSD_add_on.py, HSD_batch_run.py and HSD_heatmap.py
